@@ -1,14 +1,11 @@
-﻿using System;
-using NUnit.Framework.Api;
-
-namespace NUnit.Framework.Internal.Commands
+﻿namespace NUnit.Framework.Internal.Commands
 {
     /// <summary>
     /// CommandDecoratorList maintains a list of ICommandDecorators
     /// and is able to sort them by level so that they are applied
     /// in the proper order.
     /// </summary>
-#if CLR_2_0 || CLR_4_0
+#if true
     public class CommandDecoratorList : System.Collections.Generic.List<ICommandDecorator>
 #else
     public class CommandDecoratorList : System.Collections.ArrayList
@@ -22,7 +19,7 @@ namespace NUnit.Framework.Internal.Commands
             Sort(CommandDecoratorComparison);
         }
 
-#if CLR_2_0 || CLR_4_0
+#if true
         private int CommandDecoratorComparison(ICommandDecorator x, ICommandDecorator y)
         {
             return x.Stage.CompareTo(y.Stage);

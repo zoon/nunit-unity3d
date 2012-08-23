@@ -21,8 +21,8 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // ***********************************************************************
 
-using System.IO;
 using System.Collections;
+using System.IO;
 
 namespace NUnit.Framework.Constraints
 {

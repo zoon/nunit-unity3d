@@ -21,11 +21,9 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // ***********************************************************************
 
-using System;
-#if CLR_2_0 || CLR_4_0
 using System.Collections.Generic;
+#if true
 #endif
-using NUnit.Framework.Api;
 
 namespace NUnit.Framework.Internal.Commands
 {
@@ -36,7 +34,7 @@ namespace NUnit.Framework.Internal.Commands
     public abstract class TestCommand
     {
         private Test test;
-#if CLR_2_0 || CLR_4_0
+#if true
         private IList<TestCommand> children;
 #else
         private System.Collections.IList children;
@@ -65,7 +63,7 @@ namespace NUnit.Framework.Internal.Commands
         /// Gets any child TestCommands of this command
         /// </summary>
         /// <value>A list of child TestCommands</value>
-#if CLR_2_0 || CLR_4_0
+#if true
         public IList<TestCommand> Children
 #else
         public System.Collections.IList Children
@@ -74,7 +72,7 @@ namespace NUnit.Framework.Internal.Commands
             get 
             {
                 if (children == null)
-#if CLR_2_0 || CLR_4_0
+#if true
                     children = new List<TestCommand>();
 #else
                     children = new System.Collections.ArrayList();

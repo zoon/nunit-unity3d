@@ -22,11 +22,10 @@
 // ***********************************************************************
 
 using System;
-using System.Collections;
-#if CLR_2_0 || CLR_4_0
 using System.Collections.Generic;
-#endif
 using System.Reflection;
+#if true
+#endif
 
 namespace NUnit.Framework.Internal
 {
@@ -77,7 +76,7 @@ namespace NUnit.Framework.Internal
             return list.ToArray();
         }
 
-#if CLR_2_0 || CLR_4_0
+#if true
         private class BaseTypesFirstComparer : IComparer<MethodInfo>
         {
             public int Compare(MethodInfo m1, MethodInfo m2)
@@ -234,7 +233,7 @@ namespace NUnit.Framework.Internal
 
 		#endregion
 
-#if CLR_2_0 || CLR_4_0
+#if true
         class MethodInfoList : List<MethodInfo> { }
 #else
         class MethodInfoList : ArrayList

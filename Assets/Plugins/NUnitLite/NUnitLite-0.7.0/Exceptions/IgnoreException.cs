@@ -21,11 +21,11 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // ***********************************************************************
 
+using System;
+
 namespace NUnit.Framework 
 {
-	using System;
-
-	/// <summary>
+    /// <summary>
 	/// Thrown when an assertion failed.
 	/// </summary>
 #if !NETCF_1_0

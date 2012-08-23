@@ -24,8 +24,8 @@
 using System;
 using System.Reflection;
 using NUnit.Framework.Api;
-using NUnit.Framework.Internal;
 using NUnit.Framework.Extensibility;
+using NUnit.Framework.Internal;
 using NUnit.Framework.Internal.Commands;
 
 namespace NUnit.Framework.Builders
@@ -315,7 +315,7 @@ namespace NUnit.Framework.Builders
                 return MarkAsNotRunnable(testMethod, "Wrong number of arguments provided");
             }
 
-#if CLR_2_0 || CLR_4_0
+#if true
 #if !NETCF
             if (testMethod.Method.IsGenericMethodDefinition)
             {
@@ -338,7 +338,7 @@ namespace NUnit.Framework.Builders
             return true;
         }
 
-#if CLR_2_0 || CLR_4_0
+#if true
 #if !NETCF
         private static Type[] GetTypeArgumentsForMethod(MethodInfo method, object[] arglist)
         {

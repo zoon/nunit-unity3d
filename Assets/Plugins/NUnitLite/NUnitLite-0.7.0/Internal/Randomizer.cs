@@ -22,10 +22,10 @@
 // ***********************************************************************
 
 using System;
-#if CLR_2_0 || CLR_4_0
 using System.Collections.Generic;
-#endif
 using System.Reflection;
+#if true
+#endif
 
 namespace NUnit.Framework.Internal
 {
@@ -38,7 +38,7 @@ namespace NUnit.Framework.Internal
         #region Static Members
         private static Random seedGenerator = new Random();
 
-#if CLR_2_0 || CLR_4_0
+#if true
         private static Dictionary<MemberInfo, Randomizer> randomizers = new Dictionary<MemberInfo, Randomizer>();
 #else
         private static System.Collections.Hashtable randomizers = new System.Collections.Hashtable();

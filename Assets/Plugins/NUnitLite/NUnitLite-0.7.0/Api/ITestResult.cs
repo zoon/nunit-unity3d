@@ -21,8 +21,6 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // ***********************************************************************
 
-using System;
-
 namespace NUnit.Framework.Api
 {
     /// <summary>
@@ -141,11 +139,7 @@ namespace NUnit.Framework.Api
         /// <summary>
         /// Gets the the collection of child results.
         /// </summary>
-#if CLR_2_0 || CLR_4_0
         System.Collections.Generic.IList<ITestResult> Children
-#else
-        System.Collections.IList Children
-#endif
         {
             get;
         }

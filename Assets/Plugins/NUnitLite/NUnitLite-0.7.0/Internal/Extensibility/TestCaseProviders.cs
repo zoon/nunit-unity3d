@@ -21,20 +21,20 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // ***********************************************************************
 
-#if CLR_2_0 || CLR_4_0 || true
+#if true || true
 using System.Collections.Generic;
-#endif
 using System.Reflection;
 using NUnit.Framework.Api;
-using NUnit.Framework.Internal;
 using NUnit.Framework.Builders;
+using NUnit.Framework.Internal;
+#endif
 
 namespace NUnit.Framework.Extensibility
 {
 #if NUNITLITE || true
     class TestCaseProviders : ITestCaseProvider
     {
-#if CLR_2_0 || CLR_4_0 || true
+#if true || true
         private List<ITestCaseProvider> Extensions = new List<ITestCaseProvider>();
 #else
         private System.Collections.ArrayList Extensions = new System.Collections.ArrayList();
@@ -73,7 +73,7 @@ namespace NUnit.Framework.Extensibility
         /// </summary>
         /// <param name="method"></param>
         /// <returns></returns>
-#if CLR_2_0 || CLR_4_0
+#if true
         public System.Collections.Generic.IEnumerable<ITestCaseData> GetTestCasesFor(MethodInfo method)
         {
             List<ITestCaseData> testcases = new List<ITestCaseData>();

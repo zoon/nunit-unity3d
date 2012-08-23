@@ -39,7 +39,7 @@ namespace NUnit.Framework.Internal
         /// <returns>The display name for the Type</returns>
         public static string GetDisplayName(Type type)
         {
-#if CLR_2_0 || CLR_4_0
+#if true
             if (type.IsGenericParameter)
                 return type.Name;
 
@@ -232,7 +232,7 @@ namespace NUnit.Framework.Internal
             }
         }
 
-#if CLR_2_0 || CLR_4_0
+#if true
         /// <summary>
         /// Creates an instance of a generic Type using the supplied Type arguments
         /// </summary>

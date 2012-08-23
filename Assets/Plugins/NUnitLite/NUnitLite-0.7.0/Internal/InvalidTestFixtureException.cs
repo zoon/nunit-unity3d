@@ -21,11 +21,13 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // ***********************************************************************
 
+using System;
+using System.Runtime.Serialization;
+
 namespace NUnit.Framework.Internal
 {
-	using System;
-#if !NETCF
-	using System.Runtime.Serialization;
+    #if !NETCF
+
 #endif
 
     /// <summary>

@@ -23,6 +23,7 @@
 
 #if !NETCF
 using System.Text.RegularExpressions;
+
 #endif
 
 namespace NUnit.Framework.Constraints

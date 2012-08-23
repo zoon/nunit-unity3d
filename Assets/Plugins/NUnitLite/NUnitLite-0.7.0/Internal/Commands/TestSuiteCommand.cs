@@ -24,7 +24,6 @@
 using System;
 using System.Reflection;
 using NUnit.Framework.Api;
-using System.Diagnostics;
 
 namespace NUnit.Framework.Internal.Commands
 {

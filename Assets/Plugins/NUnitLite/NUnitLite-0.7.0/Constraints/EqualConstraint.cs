@@ -22,10 +22,11 @@
 // ***********************************************************************
 
 using System;
-using System.IO;
 using System.Collections;
-#if CLR_2_0 || CLR_4_0
 using System.Collections.Generic;
+using System.IO;
+#if true
+
 #endif
 
 namespace NUnit.Framework.Constraints
@@ -267,7 +268,7 @@ namespace NUnit.Framework.Constraints
             return this;
         }
 
-#if CLR_2_0 || CLR_4_0
+#if true
         /// <summary>
         /// Flag the constraint to use the supplied IComparer object.
         /// </summary>

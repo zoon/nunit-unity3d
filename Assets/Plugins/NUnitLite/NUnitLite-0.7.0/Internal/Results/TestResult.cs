@@ -22,7 +22,6 @@
 // ***********************************************************************
 
 using System;
-using System.Collections;
 using System.Xml;
 using NUnit.Framework.Api;
 
@@ -74,7 +73,7 @@ namespace NUnit.Framework.Internal
         /// <summary>
         /// List of child results
         /// </summary>
-#if CLR_2_0 || CLR_4_0
+#if true
         private System.Collections.Generic.List<ITestResult> children;
 #else
         private ArrayList children;
@@ -205,7 +204,7 @@ namespace NUnit.Framework.Internal
         /// <summary>
         /// Gets the collection of child results.
         /// </summary>
-#if CLR_2_0 || CLR_4_0
+#if true
         public System.Collections.Generic.IList<ITestResult> Children
         {
             get
@@ -302,7 +301,7 @@ namespace NUnit.Framework.Internal
         public void AddResult(ITestResult result)
         {
             if (children == null)
-#if CLR_2_0 || CLR_4_0
+#if true
                 children = new System.Collections.Generic.List<ITestResult>();
 #else
                 children = new ArrayList();

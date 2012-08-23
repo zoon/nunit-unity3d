@@ -22,7 +22,6 @@
 // ***********************************************************************
 
 using System;
-using System.Collections;
 
 namespace NUnit.Framework.Internal.Filters
 {

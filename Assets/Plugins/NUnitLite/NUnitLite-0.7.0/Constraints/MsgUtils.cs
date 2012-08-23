@@ -22,8 +22,8 @@
 // ***********************************************************************
 
 using System;
-using System.Text;
 using System.Collections;
+using System.Text;
 
 namespace NUnit.Framework.Constraints
 {

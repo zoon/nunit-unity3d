@@ -1,5 +1,4 @@
-﻿using System;
-using NUnit.Framework.Api;
+﻿using NUnit.Framework.Api;
 
 namespace NUnit.Framework.Internal
 {

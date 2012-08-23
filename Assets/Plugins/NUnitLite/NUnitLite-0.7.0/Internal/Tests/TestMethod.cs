@@ -21,18 +21,13 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // ***********************************************************************
 
-using System;
-#if CLR_2_0 || CLR_4_0
 using System.Collections.Generic;
-#endif
 using System.Reflection;
-using System.Threading;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Xml;
-using NUnit.Framework;
 using NUnit.Framework.Api;
 using NUnit.Framework.Internal.Commands;
+#if true
+#endif
 
 namespace NUnit.Framework.Internal
 {
@@ -55,7 +50,7 @@ namespace NUnit.Framework.Internal
         /// <summary>
         /// A list of all decorators applied to the test by attributes or parameterset arguments
         /// </summary>
-#if CLR_2_0 || CLR_4_0
+#if true
         private List<ICommandDecorator> decorators = new List<ICommandDecorator>();
 #else
         private System.Collections.ArrayList decorators = new System.Collections.ArrayList();
@@ -125,7 +120,7 @@ namespace NUnit.Framework.Internal
         /// <summary>
         /// Gets a list of custom decorators for this test.
         /// </summary>
-#if CLR_2_0 || CLR_4_0
+#if true
         public IList<ICommandDecorator> CustomDecorators
 #else
         public System.Collections.IList CustomDecorators
@@ -200,7 +195,7 @@ namespace NUnit.Framework.Internal
         /// Gets this test's child tests
         /// </summary>
         /// <value>A list of child tests</value>
-#if CLR_2_0 || CLR_4_0
+#if true
         public override IList<ITest> Tests
 #else
         public override System.Collections.IList Tests

@@ -2,7 +2,6 @@
 
 using UnityEngine;
 
-
 #endregion
 
 public class CsharpScriptsTestDriver : MonoBehaviour

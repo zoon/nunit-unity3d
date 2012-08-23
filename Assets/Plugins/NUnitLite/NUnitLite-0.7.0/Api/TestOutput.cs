@@ -23,8 +23,6 @@
 
 namespace NUnit.Framework.Api
 {
-	using System;
-
     /// <summary>
     /// The TestOutput class holds a unit of output from 
     /// a test to either stdOut or stdErr

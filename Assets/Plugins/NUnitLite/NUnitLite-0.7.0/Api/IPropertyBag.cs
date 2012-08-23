@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace NUnit.Framework.Api
+﻿namespace NUnit.Framework.Api
 {
     /// <summary>
     /// A PropertyBag represents a collection of name/value pairs
@@ -153,10 +151,6 @@ namespace NUnit.Framework.Api
         /// <summary>
         /// Gets a collection containing all the keys in the property set
         /// </summary>
-#if CLR_2_0 || CLR_4_0
         System.Collections.Generic.ICollection<string> Keys { get; }
-#else
-        System.Collections.ICollection Keys { get; }
-#endif
     }
 }

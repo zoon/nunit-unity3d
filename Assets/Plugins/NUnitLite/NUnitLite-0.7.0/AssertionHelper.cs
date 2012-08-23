@@ -183,7 +183,6 @@ namespace NUnit.Framework
 
         #region Expect<T>
 
-#if CLR_2_0 || CLR_4_0
         /// <summary>
         /// Apply a constraint to an actual value, succeeding if the constraint
         /// is satisfied and throwing an assertion exception on failure.
@@ -255,7 +254,6 @@ namespace NUnit.Framework
         {
             Assert.That(actual, expression, message, args);
         }
-#endif
         
         #endregion
 

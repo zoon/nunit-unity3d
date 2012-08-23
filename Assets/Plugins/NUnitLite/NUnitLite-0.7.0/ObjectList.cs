@@ -21,8 +21,6 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // ***********************************************************************
 
-using System;
-
 namespace NUnit
 {
     /// <summary>
@@ -31,7 +29,7 @@ namespace NUnit
     /// ObjectList does not attempt to be a general replacement for either of
     /// these classes but only implements what is needed within the framework.
     /// </summary>
-#if CLR_2_0 || CLR_4_0
+#if true
     public class ObjectList : System.Collections.Generic.List<object>
     {
         /// <summary>

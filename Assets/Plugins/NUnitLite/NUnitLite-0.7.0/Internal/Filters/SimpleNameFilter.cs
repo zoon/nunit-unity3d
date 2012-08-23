@@ -22,10 +22,10 @@
 // ***********************************************************************
 
 using System;
-#if CLR_2_0 || CLR_4_0
 using System.Collections.Generic;
-#endif
 using NUnit.Framework.Api;
+#if true
+#endif
 
 namespace NUnit.Framework.Internal.Filters
 {
@@ -35,7 +35,7 @@ namespace NUnit.Framework.Internal.Filters
     [Serializable]
     public class SimpleNameFilter : TestFilter
     {
-#if CLR_2_0 || CLR_4_0
+#if true
         private List<string> names = new List<string>();
 #else
         private System.Collections.ArrayList names = new System.Collections.ArrayList();

@@ -21,13 +21,13 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // ***********************************************************************
 
+using System;
+using NUnit.Framework.Api;
+using NUnit.Framework.Internal;
+
 namespace NUnit.Framework
 {
-	using System;
-    using NUnit.Framework.Api;
-    using NUnit.Framework.Internal;
-
-	/// <summary>
+    /// <summary>
 	/// Adding this attribute to a method within a <seealso cref="TestFixtureAttribute"/> 
 	/// class makes the method callable from the NUnit test runner. There is a property 
 	/// called Description which is optional which you can provide a more detailed test

@@ -21,11 +21,11 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // ***********************************************************************
 
+using System;
+
 namespace NUnit.Framework
 {
-	using System;
-
-	/// <summary>
+    /// <summary>
 	/// Attribute used to identify a method that is called 
 	/// immediately after each test is run. The method is 
 	/// guaranteed to be called, even if an exception is thrown.

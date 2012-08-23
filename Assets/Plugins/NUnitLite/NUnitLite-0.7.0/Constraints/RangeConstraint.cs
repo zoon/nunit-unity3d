@@ -23,8 +23,9 @@
 
 using System;
 using System.Collections;
-#if CLR_2_0 || CLR_4_0
 using System.Collections.Generic;
+#if true
+
 #endif
 
 namespace NUnit.Framework.Constraints
@@ -86,7 +87,7 @@ namespace NUnit.Framework.Constraints
             return this;
         }
 
-#if CLR_2_0 || CLR_4_0
+#if true
         /// <summary>
         /// Modifies the constraint to use an IComparer&lt;T&gt; and returns self.
         /// </summary>

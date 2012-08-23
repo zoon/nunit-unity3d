@@ -22,12 +22,11 @@
 // ***********************************************************************
 
 using System;
-#if CLR_2_0 || CLR_4_0
-using System.Collections.Generic;
-#endif
 using System.IO;
 using System.Reflection;
 using Microsoft.Win32;
+#if true
+#endif
 
 namespace NUnit.Framework.Internal
 {
@@ -556,7 +555,7 @@ namespace NUnit.Framework.Internal
             }
         }
 
-#if CLR_2_0 || CLR_4_0
+#if true
         class FrameworkList : System.Collections.Generic.List<RuntimeFramework> { }
 #else
         class FrameworkList : System.Collections.ArrayList 

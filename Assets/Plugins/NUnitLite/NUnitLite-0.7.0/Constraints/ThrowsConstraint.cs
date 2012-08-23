@@ -82,7 +82,7 @@ namespace NUnit.Framework.Constraints
             return hasSucceeded;
         }
 
-#if CLR_2_0 || CLR_4_0
+#if true
         /// <summary>
         /// Converts an ActualValueDelegate to a TestDelegate
         /// before calling the primary overload.

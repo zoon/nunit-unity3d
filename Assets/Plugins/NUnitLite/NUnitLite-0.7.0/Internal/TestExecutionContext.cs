@@ -22,18 +22,14 @@
 // ***********************************************************************
 
 using System;
-using System.Collections;
-using System.Collections.Specialized;
-using System.IO;
 using System.Diagnostics;
 using System.Globalization;
+using System.IO;
 using System.Threading;
-
+using NUnit.Framework.Api;
 #if !NUNITLITE && false
 using System.Security.Principal;
 #endif
-
-using NUnit.Framework.Api;
 
 namespace NUnit.Framework.Internal
 {

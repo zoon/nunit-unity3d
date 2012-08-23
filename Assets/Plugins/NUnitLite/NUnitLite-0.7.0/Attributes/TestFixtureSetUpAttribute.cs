@@ -21,11 +21,11 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // ***********************************************************************
 
+using System;
+
 namespace NUnit.Framework
 {
-	using System;
-
-	/// <summary>
+    /// <summary>
 	/// Attribute used to identify a method that is 
 	/// called before any tests in a fixture are run.
 	/// </summary>

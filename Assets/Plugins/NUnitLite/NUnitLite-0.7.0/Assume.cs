@@ -21,7 +21,6 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // ***********************************************************************
 
-using System;
 using System.ComponentModel;
 using NUnit.Framework.Constraints;
 using NUnit.Framework.Internal;
@@ -255,7 +254,6 @@ namespace NUnit.Framework
 
         #region Assume.That<T>
 
-#if CLR_2_0 || CLR_4_0
         /// <summary>
         /// Apply a constraint to a referenced value, succeeding if the constraint
         /// is satisfied and throwing an InconclusiveException on failure.
@@ -298,7 +296,6 @@ namespace NUnit.Framework
                 throw new InconclusiveException(writer.ToString());
             }
         }
-#endif
 
         #endregion
     }

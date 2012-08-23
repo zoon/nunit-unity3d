@@ -21,12 +21,11 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // ***********************************************************************
 
-using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using System.Collections;
-#if CLR_2_0 || CLR_4_0
-using System.Collections.Generic;
+#if true || true
+
 #endif
 
 namespace NUnitLite.Runner
@@ -321,7 +320,7 @@ namespace NUnitLite.Runner
             }
         }
 
-#if CLR_2_0 || CLR_4_0
+#if true || true
         class StringList : List<string> { }
 #else
         class StringList : ArrayList 

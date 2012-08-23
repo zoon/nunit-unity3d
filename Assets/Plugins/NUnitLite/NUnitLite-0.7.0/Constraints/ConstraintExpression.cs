@@ -204,7 +204,7 @@ namespace NUnit.Framework.Constraints
             return this.Append(new AttributeOperator(expectedType));
         }
 
-#if CLR_2_0 || CLR_4_0
+#if true
         /// <summary>
         /// Returns a new AttributeConstraint checking for the
         /// presence of a particular attribute on an object.
@@ -483,7 +483,7 @@ namespace NUnit.Framework.Constraints
             return (ExactTypeConstraint)this.Append(new ExactTypeConstraint(expectedType));
         }
 
-#if CLR_2_0 || CLR_4_0
+#if true
         /// <summary>
         /// Returns a constraint that tests whether the actual
         /// value is of the exact type supplied as an argument.
@@ -507,7 +507,7 @@ namespace NUnit.Framework.Constraints
             return (InstanceOfTypeConstraint)this.Append(new InstanceOfTypeConstraint(expectedType));
         }
 
-#if CLR_2_0 || CLR_4_0
+#if true
         /// <summary>
         /// Returns a constraint that tests whether the actual value
         /// is of the type supplied as an argument or a derived type.
@@ -531,7 +531,7 @@ namespace NUnit.Framework.Constraints
             return (AssignableFromConstraint)this.Append(new AssignableFromConstraint(expectedType));
         }
 
-#if CLR_2_0 || CLR_4_0
+#if true
         /// <summary>
         /// Returns a constraint that tests whether the actual value
         /// is assignable from the type supplied as an argument.
@@ -555,7 +555,7 @@ namespace NUnit.Framework.Constraints
             return (AssignableToConstraint)this.Append(new AssignableToConstraint(expectedType));
         }
 
-#if CLR_2_0 || CLR_4_0
+#if true
         /// <summary>
         /// Returns a constraint that tests whether the actual value
         /// is assignable from the type supplied as an argument.

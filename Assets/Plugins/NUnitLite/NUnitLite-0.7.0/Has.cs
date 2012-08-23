@@ -22,7 +22,6 @@
 // ***********************************************************************
 
 using System;
-using System.Collections;
 using NUnit.Framework.Constraints;
 
 namespace NUnit.Framework
@@ -179,7 +178,7 @@ namespace NUnit.Framework
             return new ConstraintExpression().Attribute(expectedType);
         }
 
-#if CLR_2_0 || CLR_4_0
+#if true
         /// <summary>
         /// Returns a new AttributeConstraint checking for the
         /// presence of a particular attribute on an object.

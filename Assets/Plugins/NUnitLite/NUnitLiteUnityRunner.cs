@@ -6,9 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using NUnitLite;
 using NUnitLite.Runner;
 using UnityEngine;
-
 
 #endregion
 
@@ -41,7 +41,7 @@ public static class NUnitLiteUnityRunner
     private static readonly HashSet<Assembly> Tested =
         new HashSet<Assembly>();
 
-    public static Action<string, string> Presenter { get; set; }
+    public static Action<string, ResultSummary> Presenter { get; set; }
 
     static NUnitLiteUnityRunner()
     {
@@ -66,35 +66,21 @@ public static class NUnitLiteUnityRunner
 
         using (var sw = new StringWriter())
         {
-            var runner = new TextUI(sw);
+            var runner = new NUnitStreamUI(sw);
             var platform = Environment.OSVersion.Platform;
-            var nologo = (platform == PlatformID.Win32NT || platform == PlatformID.Win32Windows)
-                             ? "/nologo"
-                             : "-nologo";
-            runner.Execute(new[] {assembly.FullName});
+            runner.Execute(assembly);
+            var resultSummary = runner.Summary;
             var resultText = sw.GetStringBuilder().ToString();
-            var assemblyName = assembly.GetName().Name;
-            Presenter(assemblyName, resultText);
+            Presenter(resultText, resultSummary);
         }
     }
 
 
-    private static void UnityConsolePresenter(string assemblyName,
-                                              string longResult)
+    private static void UnityConsolePresenter(string longResult, ResultSummary result)
     {
-        var lines = longResult.Split(new[] {'\n', '\r'},
-                                     StringSplitOptions.RemoveEmptyEntries);
-        var shortResult = lines[0];
-
-        if (shortResult.Contains("0 Fail") && shortResult.Contains("0 Err"))
-        {
-            Debug.Log(string.Format("{0} / Success: {1}", assemblyName,
-                                    shortResult));
-        }
+        if (result.ErrorCount > 0 || result.FailureCount > 0)
+            Debug.LogWarning(longResult);
         else
-        {
-            Debug.LogWarning(string.Format("{0} / Failure: {1}", assemblyName,
-                                           longResult));
-        }
+            Debug.Log(longResult);
     }
 }

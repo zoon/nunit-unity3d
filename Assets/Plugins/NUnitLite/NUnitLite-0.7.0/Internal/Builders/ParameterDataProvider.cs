@@ -22,11 +22,10 @@
 // ***********************************************************************
 
 using System;
-using System.Reflection;
 using System.Collections;
+using System.Reflection;
 using NUnit.Framework.Api;
 using NUnit.Framework.Extensibility;
-using NUnit.Framework.Internal;
 
 namespace NUnit.Framework.Builders
 {

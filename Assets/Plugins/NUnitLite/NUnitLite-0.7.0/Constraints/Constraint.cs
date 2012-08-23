@@ -21,8 +21,6 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // ***********************************************************************
 
-using System.Collections;
-
 namespace NUnit.Framework.Constraints
 {
     /// <summary>
@@ -193,7 +191,7 @@ namespace NUnit.Framework.Constraints
         /// </summary>
         /// <param name="actual">A reference to the value to be tested</param>
         /// <returns>True for success, false for failure</returns>
-#if CLR_2_0 || CLR_4_0
+#if true
         public virtual bool Matches<T>(ref T actual)
 #else
         public virtual bool Matches(ref bool actual)

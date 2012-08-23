@@ -23,11 +23,11 @@
 
 using System;
 using System.Collections;
-#if CLR_2_0 || CLR_4_0
 using System.Collections.Generic;
-#endif
 using System.Text;
 using NUnit.Framework.Api;
+#if true
+#endif
 
 namespace NUnit.Framework.Internal.Filters
 {
@@ -39,7 +39,7 @@ namespace NUnit.Framework.Internal.Filters
 	[Serializable]
 	public class CategoryFilter : TestFilter
 	{
-#if CLR_2_0 || CLR_4_0
+#if true
         List<string> categories = new List<string>();
 #else
         ArrayList categories = new ArrayList();

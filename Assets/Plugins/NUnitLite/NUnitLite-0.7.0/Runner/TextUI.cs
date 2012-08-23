@@ -22,11 +22,10 @@
 // ***********************************************************************
 
 using System;
-using System.IO;
 using System.Collections;
+using System.IO;
 using System.Reflection;
 using System.Xml;
-using NUnit.Framework;
 using NUnit.Framework.Api;
 using NUnit.Framework.Internal;
 

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections;
-#if CLR_2_0 || CLR_4_0
 using System.Collections.Generic;
-#endif
 using System.Xml;
 using NUnit.Framework.Api;
+#if true
+#endif
 
 namespace NUnit.Framework.Internal
 {
@@ -18,7 +18,7 @@ namespace NUnit.Framework.Internal
     /// </summary>
     public class PropertyBag : IPropertyBag
     {
-#if CLR_2_0 || CLR_4_0
+#if true 
         private Dictionary<string, IList> inner = new Dictionary<string, IList>();
 
         private bool TryGetValue(string key, out IList list)
@@ -248,7 +248,7 @@ namespace NUnit.Framework.Internal
         /// Gets a collection containing all the keys in the property set
         /// </summary>
         /// <value></value>
-#if CLR_2_0 || CLR_4_0
+#if true
         public ICollection<string> Keys
 #else
         public ICollection Keys
@@ -336,7 +336,7 @@ namespace NUnit.Framework.Internal
         /// <summary>
         /// TODO: Documentation needed for class
         /// </summary>
-#if CLR_2_0 || CLR_4_0
+#if true
         public class PropertyBagEnumerator : IEnumerator<PropertyEntry>
         {
             private IEnumerator<KeyValuePair<string, IList>> innerEnum;
@@ -366,7 +366,7 @@ namespace NUnit.Framework.Internal
 
                 if (innerEnum.MoveNext())
                 {
-#if CLR_2_0 || CLR_4_0
+#if true
                     valueEnum = innerEnum.Current.Value.GetEnumerator();
 #else
                     DictionaryEntry entry = (DictionaryEntry)innerEnum.Current;
@@ -380,7 +380,7 @@ namespace NUnit.Framework.Internal
                 if (valueEnum == null)
                     throw new InvalidOperationException();
 
-#if CLR_2_0 || CLR_4_0
+#if true
                 string key = innerEnum.Current.Key;
 #else
                 DictionaryEntry entry = (DictionaryEntry)innerEnum.Current;
@@ -394,7 +394,7 @@ namespace NUnit.Framework.Internal
 
             #region IEnumerator<PropertyEntry> Members
 
-#if CLR_2_0 || CLR_4_0
+#if true
             PropertyEntry IEnumerator<PropertyEntry>.Current
             {
                 get 
@@ -408,7 +408,7 @@ namespace NUnit.Framework.Internal
 
             #region IDisposable Members
 
-#if CLR_2_0 || CLR_4_0
+#if true
             void IDisposable.Dispose()
             {
             }
@@ -439,7 +439,7 @@ namespace NUnit.Framework.Internal
                         return false;
                     }
 
-#if CLR_2_0 || CLR_4_0
+#if true
                     valueEnum = innerEnum.Current.Value.GetEnumerator();
 #else
                     DictionaryEntry entry = (DictionaryEntry)innerEnum.Current;

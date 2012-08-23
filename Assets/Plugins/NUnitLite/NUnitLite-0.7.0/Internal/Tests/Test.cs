@@ -22,7 +22,6 @@
 // ***********************************************************************
 
 using System;
-using System.Threading;
 using System.Reflection;
 using System.Xml;
 using NUnit.Framework.Api;
@@ -247,7 +246,7 @@ namespace NUnit.Framework.Internal
         /// </summary>
         /// <value>A list of child tests</value>
         
-#if CLR_2_0 || CLR_4_0
+#if true
         public abstract System.Collections.Generic.IList<ITest> Tests { get; }
 #else
         public abstract System.Collections.IList Tests { get; }

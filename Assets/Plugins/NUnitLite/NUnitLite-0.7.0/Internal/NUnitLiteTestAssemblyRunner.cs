@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Reflection;
-using System.Threading;
 using NUnit.Framework.Api;
 using NUnit.Framework.Internal.Commands;
 

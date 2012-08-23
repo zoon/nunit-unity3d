@@ -22,10 +22,10 @@
 // ***********************************************************************
 
 using System;
-#if CLR_2_0 || CLR_4_0
 using System.Collections.Generic;
-#endif
 using NUnit.Framework.Api;
+#if true
+#endif
 
 namespace NUnit.Framework.Internal.Filters
 {
@@ -36,7 +36,7 @@ namespace NUnit.Framework.Internal.Filters
 	[Serializable]
 	public class OrFilter : TestFilter
 	{
-#if CLR_2_0 || CLR_4_0
+#if true
 		private List<ITestFilter> filters = new List<ITestFilter>();
 #else
         private System.Collections.ArrayList filters = new System.Collections.ArrayList();
@@ -72,7 +72,7 @@ namespace NUnit.Framework.Internal.Filters
 		{
 			get
 			{
-#if CLR_2_0 || CLR_4_0
+#if true
                 return filters.ToArray();
 #else
 				return (ITestFilter[])filters.ToArray(typeof(ITestFilter));

@@ -22,10 +22,9 @@
 // ***********************************************************************
 
 using System;
-using System.Reflection;
-using NUnit.Framework.Api;
-#if NUNITLITE || true
 using NUnit.Framework.Builders;
+#if NUNITLITE || true
+
 #endif
 
 namespace NUnit.Framework.Internal

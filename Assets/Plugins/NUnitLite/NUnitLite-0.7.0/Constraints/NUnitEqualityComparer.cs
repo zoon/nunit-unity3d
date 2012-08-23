@@ -22,9 +22,8 @@
 // ***********************************************************************
 
 using System;
-using System.IO;
 using System.Collections;
-using System.Reflection;
+using System.IO;
 
 namespace NUnit.Framework.Constraints
 {

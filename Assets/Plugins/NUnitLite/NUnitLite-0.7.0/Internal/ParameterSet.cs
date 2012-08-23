@@ -22,12 +22,7 @@
 // ***********************************************************************
 
 using System;
-using System.Collections;
-using System.Collections.Specialized;
-using System.Reflection;
-using NUnit.Framework;
 using NUnit.Framework.Api;
-using NUnit.Framework.Internal.Commands;
 
 namespace NUnit.Framework.Internal
 {

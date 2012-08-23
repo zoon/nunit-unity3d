@@ -24,10 +24,9 @@
 #if !NETCF_1_0
 using System;
 using System.IO;
-#if !NETCF
-using System.Runtime.Serialization;
-#endif
 using System.Xml.Serialization;
+#if !NETCF
+#endif
 
 namespace NUnit.Framework.Constraints
 {

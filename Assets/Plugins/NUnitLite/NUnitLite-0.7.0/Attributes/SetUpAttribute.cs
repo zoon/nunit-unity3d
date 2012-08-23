@@ -21,10 +21,10 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // ***********************************************************************
 
+using System;
+
 namespace NUnit.Framework
 {
-	using System;
-
     /// <summary>
     /// Attribute used to mark a class that contains one-time SetUp 
     /// and/or TearDown methods that apply to all the tests in a

@@ -23,8 +23,6 @@
 
 using System;
 using NUnit.Framework.Internal.Commands;
-using NUnit.Framework.Api;
-using NUnit.Framework.Internal;
 
 namespace NUnit.Framework
 {
