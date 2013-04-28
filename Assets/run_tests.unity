@@ -163,6 +163,7 @@ GameObject:
   - 4: {fileID: 2016745184}
   - 114: {fileID: 2016745185}
   - 114: {fileID: 2016745186}
+  - 114: {fileID: 2016745187}
   m_Layer: 0
   m_Name: TestRunner
   m_TagString: Untagged
@@ -191,7 +192,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3cacbc4a74297ec4db55193cdfd2193e, type: 3}
   m_Name: 
-  RunTests: 0
+  RunTests: 1
 --- !u!114 &2016745186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,4 +203,15 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abb83eca8fb30b642a07442abb29fe28, type: 3}
   m_Name: 
-  RunTests: 0
+  RunTests: 1
+--- !u!114 &2016745187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2016745183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c9c898eec3aea9489deb30faabd92c2, type: 3}
+  m_Name: 
+  runTests: 1
