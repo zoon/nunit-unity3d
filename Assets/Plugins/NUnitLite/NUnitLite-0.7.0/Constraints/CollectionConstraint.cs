@@ -56,9 +56,10 @@ namespace NUnit.Framework.Constraints
             if (collection != null)
                 return collection.Count == 0;
 
+#pragma warning disable 219
             foreach (object o in enumerable)
                 return false;
-
+#pragma warning restore 219
             return true;
         }
 

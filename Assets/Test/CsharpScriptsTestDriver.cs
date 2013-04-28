@@ -6,18 +6,22 @@ using UnityEngine;
 
 public class CsharpScriptsTestDriver : MonoBehaviour
 {
-    // ReSharper disable UnassignedField.Global
-    // ReSharper disable InconsistentNaming
-    public bool runTests;
-    // ReSharper restore InconsistentNaming
-    // ReSharper restore UnassignedField.Global
+    #region Editor Fields
+
+    public bool RunTests;
+
+    #endregion
 
 
-    // ReSharper disable UnusedMember.Local
+
+    #region Unity Callbacks
+
     private void Start()
-        // ReSharper restore UnusedMember.Local
     {
-        if (runTests)
+        if (RunTests)
             NUnitLiteUnityRunner.RunTests();
     }
+
+    #endregion
+
 }

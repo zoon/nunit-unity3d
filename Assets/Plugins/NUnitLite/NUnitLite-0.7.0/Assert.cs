@@ -1178,7 +1178,7 @@ namespace NUnit.Framework
         /// <param name="actual">The actual value</param>
         /// <param name="message">The message to display in case of failure</param>
         /// <param name="args">Array of objects to be used in formatting the message</param>
-        [CLSCompliant(false)]
+        // [CLSCompliant(false)]
         public static void AreEqual(uint expected, uint actual, string message, params object[] args)
         {
             Assert.That(actual, Is.EqualTo(expected), message, args);
@@ -1190,7 +1190,7 @@ namespace NUnit.Framework
         /// <param name="expected">The expected value</param>
         /// <param name="actual">The actual value</param>
         /// <param name="message">The message to display in case of failure</param>
-        [CLSCompliant(false)]
+        // [CLSCompliant(false)]
         public static void AreEqual(uint expected, uint actual, string message)
         {
             Assert.That(actual, Is.EqualTo(expected), message, null);
@@ -1201,7 +1201,7 @@ namespace NUnit.Framework
         /// </summary>
         /// <param name="expected">The expected value</param>
         /// <param name="actual">The actual value</param>
-        [CLSCompliant(false)]
+        // [CLSCompliant(false)]
         public static void AreEqual(uint expected, uint actual)
         {
             Assert.That(actual, Is.EqualTo(expected), null, null);
@@ -1219,7 +1219,7 @@ namespace NUnit.Framework
         /// <param name="actual">The actual value</param>
         /// <param name="message">The message to display in case of failure</param>
         /// <param name="args">Array of objects to be used in formatting the message</param>
-        [CLSCompliant(false)]
+        // [CLSCompliant(false)]
         public static void AreEqual(ulong expected, ulong actual, string message, params object[] args)
         {
             Assert.That(actual, Is.EqualTo(expected), message, args);
@@ -1231,7 +1231,7 @@ namespace NUnit.Framework
         /// <param name="expected">The expected value</param>
         /// <param name="actual">The actual value</param>
         /// <param name="message">The message to display in case of failure</param>
-        [CLSCompliant(false)]
+        // [CLSCompliant(false)]
         public static void AreEqual(ulong expected, ulong actual, string message)
         {
             Assert.That(actual, Is.EqualTo(expected), message, null);
@@ -1242,7 +1242,7 @@ namespace NUnit.Framework
         /// </summary>
         /// <param name="expected">The expected value</param>
         /// <param name="actual">The actual value</param>
-        [CLSCompliant(false)]
+        // [CLSCompliant(false)]
         public static void AreEqual(ulong expected, ulong actual)
         {
             Assert.That(actual, Is.EqualTo(expected), null, null);
@@ -1518,7 +1518,7 @@ namespace NUnit.Framework
         /// <param name="actual">The actual value</param>
         /// <param name="message">The message to display in case of failure</param>
         /// <param name="args">Array of objects to be used in formatting the message</param>
-        [CLSCompliant(false)]
+        // [CLSCompliant(false)]
         public static void AreNotEqual(uint expected, uint actual, string message, params object[] args)
         {
             Assert.That(actual, Is.Not.EqualTo(expected), message, args);
@@ -1530,7 +1530,7 @@ namespace NUnit.Framework
         /// <param name="expected">The expected value</param>
         /// <param name="actual">The actual value</param>
         /// <param name="message">The message to display in case of failure</param>
-        [CLSCompliant(false)]
+        // [CLSCompliant(false)]
         public static void AreNotEqual(uint expected, uint actual, string message)
         {
             Assert.That(actual, Is.Not.EqualTo(expected), message, null);
@@ -1541,7 +1541,7 @@ namespace NUnit.Framework
         /// </summary>
         /// <param name="expected">The expected value</param>
         /// <param name="actual">The actual value</param>
-        [CLSCompliant(false)]
+        // [CLSCompliant(false)]
         public static void AreNotEqual(uint expected, uint actual)
         {
             Assert.That(actual, Is.Not.EqualTo(expected), null, null);
@@ -1559,7 +1559,7 @@ namespace NUnit.Framework
         /// <param name="actual">The actual value</param>
         /// <param name="message">The message to display in case of failure</param>
         /// <param name="args">Array of objects to be used in formatting the message</param>
-        [CLSCompliant(false)]
+        // [CLSCompliant(false)]
         public static void AreNotEqual(ulong expected, ulong actual, string message, params object[] args)
         {
             Assert.That(actual, Is.Not.EqualTo(expected), message, args);
@@ -1571,7 +1571,7 @@ namespace NUnit.Framework
         /// <param name="expected">The expected value</param>
         /// <param name="actual">The actual value</param>
         /// <param name="message">The message to display in case of failure</param>
-        [CLSCompliant(false)]
+        // [CLSCompliant(false)]
         public static void AreNotEqual(ulong expected, ulong actual, string message)
         {
             Assert.That(actual, Is.Not.EqualTo(expected), message, null);
@@ -1582,7 +1582,7 @@ namespace NUnit.Framework
         /// </summary>
         /// <param name="expected">The expected value</param>
         /// <param name="actual">The actual value</param>
-        [CLSCompliant(false)]
+        // [CLSCompliant(false)]
         public static void AreNotEqual(ulong expected, ulong actual)
         {
             Assert.That(actual, Is.Not.EqualTo(expected), null, null);

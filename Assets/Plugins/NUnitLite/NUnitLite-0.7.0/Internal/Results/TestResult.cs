@@ -37,7 +37,7 @@ namespace NUnit.Framework.Internal
         /// <summary>
         /// Indicates the result of the test
         /// </summary>
-        [CLSCompliant(false)]
+        // [CLSCompliant(false)]
         protected ResultState resultState;
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace NUnit.Framework.Internal
         /// <summary>
         /// The test that this result pertains to
         /// </summary>
-        [CLSCompliant(false)]
+        // [CLSCompliant(false)]
         protected readonly ITest test;
 
 #if !NETCF_1_0
@@ -61,13 +61,13 @@ namespace NUnit.Framework.Internal
         /// <summary>
         /// Message giving the reason for failure, error or skipping the test
         /// </summary>
-        [CLSCompliant(false)]
+        // [CLSCompliant(false)]
         protected string message;
 
         /// <summary>
         /// Number of asserts executed by this test
         /// </summary>
-        [CLSCompliant(false)]
+        // [CLSCompliant(false)]
         protected int assertCount = 0;
 
         /// <summary>

@@ -1,4 +1,4 @@
-// Copyright (C) 2010 by Andrew Zhilin <andrew_zhilin@yahoo.com>
+// Copyright (C) 2013 by Andrew Zhilin <andrew_zhilin@yahoo.com>
 
 #region Usings
 
@@ -21,9 +21,6 @@ using UnityEngine;
  *
  * - Assembly-CSharp-firstpass.dll for 'Plugins' and 'Standard Assets'
  * - Assembly-CSharp.dll           for another scripts
- *
- * (Note, that Unity uses criptic names like
- * '9cda786f9571f9a4d863974e5a5a9142')
  *
  * Then, if you want have tests in both places - you should call
  * NUnitLiteUnityRunner.RunTests() from both places. One call per assembly
@@ -67,7 +64,6 @@ public static class NUnitLiteUnityRunner
         using (var sw = new StringWriter())
         {
             var runner = new NUnitStreamUI(sw);
-            var platform = Environment.OSVersion.Platform;
             runner.Execute(assembly);
             var resultSummary = runner.Summary;
             var resultText = sw.GetStringBuilder().ToString();

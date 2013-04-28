@@ -31,8 +31,8 @@ namespace NUnitLite.Runner
     /// </summary>
     class TcpWriter : TextWriter
     {
-        private string hostName;
-        private int port;
+        // private string hostName;
+        // private int port;
 
         private TcpClient client;
         private NetworkStream stream;
@@ -40,8 +40,8 @@ namespace NUnitLite.Runner
 
         public TcpWriter(string hostName, int port)
         {
-            this.hostName = hostName;
-            this.port = port;
+            // this.hostName = hostName;
+            // this.port = port;
             this.client = new TcpClient(hostName, port);
             this.stream = client.GetStream();
             this.writer = new StreamWriter(stream);

@@ -48,7 +48,7 @@ namespace NUnitLite.Runner
     {
         private int reportCount = 0;
 
-        private NUnit.ObjectList assemblies = new NUnit.ObjectList();
+        // private NUnit.ObjectList assemblies = new NUnit.ObjectList();
 
         private TextWriter writer;
 
@@ -93,7 +93,9 @@ namespace NUnitLite.Runner
                 writer.Write(assembly.GetName().Name + ": ");
                 RunTests();
             }
+#pragma warning disable 168
             catch (NullReferenceException ex)
+#pragma warning restore 168
             {
             }
             catch (Exception ex)
