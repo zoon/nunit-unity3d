@@ -14,7 +14,6 @@ After compilation of C# files Unity gives you two assemblies:
 - Assembly-CSharp-firstpass.dll for 'Plugins' and '[Pro] Standard Assets'
 - Assembly-CSharp.dll for other scripts
 
-(Note, that Unity uses criptic names like '9cda786f9571f9a4d863974e5a5a9142')
 
 Then, if you want to have tests in both places - you should call
 UnityTestRunner.RunTests() from both places. One call per assembly
