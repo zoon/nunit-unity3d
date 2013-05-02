@@ -35,12 +35,12 @@ Desktop.ini
 *.suo
 *.pidb
 Properties/AssemblyInfo.cs
-Assembly*
 
 *.Resharper*
 _ReSharper.*/*
 
 ### Unity Specific:
+*.unityproj
 *.userprefs
 Library/*
 
