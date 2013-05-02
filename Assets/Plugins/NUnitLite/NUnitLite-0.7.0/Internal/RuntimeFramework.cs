@@ -162,28 +162,6 @@ namespace NUnit.Framework.Internal
 							break;
 						}
 					}
-					else /* It's windows */
-					if (major == 2)
-                    {
-                        RegistryKey key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\.NETFramework");
-                        if (key != null)
-                        {
-                            string installRoot = key.GetValue("InstallRoot") as string;
-                            if (installRoot != null)
-                            {
-                                if (Directory.Exists(Path.Combine(installRoot, "v3.5")))
-                                {
-                                    major = 3;
-                                    minor = 5;
-                                }
-                                else if (Directory.Exists(Path.Combine(installRoot, "v3.0")))
-                                {
-                                    major = 3;
-                                    minor = 0;
-                                }
-                            }
-                        }
-                    }
 
                     currentFramework = new RuntimeFramework(runtime, new Version(major, minor));
                     currentFramework.clrVersion = Environment.Version;
@@ -454,22 +432,6 @@ namespace NUnit.Framework.Internal
 
         private static void AppendAllMonoFrameworks(FrameworkList frameworks)
         {
-            // TODO: Find multiple installed Mono versions under Linux
-            if (Environment.OSVersion.Platform == PlatformID.Win32NT)
-            {
-                // Use registry to find alternate versions
-                RegistryKey key = Registry.LocalMachine.OpenSubKey(@"Software\Novell\Mono");
-                if (key == null) return;
-
-                foreach (string version in key.GetSubKeyNames())
-                {
-                    RegistryKey subKey = key.OpenSubKey(version);
-                    string monoPrefix = subKey.GetValue("SdkInstallRoot") as string;
-
-                    AppendMonoFramework(frameworks, monoPrefix, version);
-                }
-            }
-            else
                 AppendDefaultMonoFramework(frameworks);
         }
 
@@ -479,31 +441,13 @@ namespace NUnit.Framework.Internal
         {
             string monoPrefix = null;
             string version = null;
-
-            if (Environment.OSVersion.Platform == PlatformID.Win32NT)
-            {
-                RegistryKey key = Registry.LocalMachine.OpenSubKey(@"Software\Novell\Mono");
-                if (key != null)
-                {
-                    version = key.GetValue("DefaultCLR") as string;
-                    if (version != null && version != "")
-                    {
-                        key = key.OpenSubKey(version);
-                        if (key != null)
-                            monoPrefix = key.GetValue("SdkInstallRoot") as string;
-                    }
-                }
-            }
-            else // Assuming we're currently running Mono - change if more runtimes are added
-            {
-                string libMonoDir = Path.GetDirectoryName(typeof(object).Assembly.Location);
-                monoPrefix = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(libMonoDir)));
-            }
+            string libMonoDir = Path.GetDirectoryName(typeof (object).Assembly.Location);
+            monoPrefix = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(libMonoDir)));
 
             AppendMonoFramework(frameworks, monoPrefix, version);
         }
 
-        private static void AppendMonoFramework(FrameworkList frameworks, string monoPrefix, string version)
+	    private static void AppendMonoFramework(FrameworkList frameworks, string monoPrefix, string version)
         {
             if (monoPrefix != null)
             {
@@ -537,22 +481,7 @@ namespace NUnit.Framework.Internal
 
         private static void AppendDotNetFrameworks(FrameworkList frameworks)
         {
-            if (Environment.OSVersion.Platform == PlatformID.Win32NT)
-            {
-                RegistryKey key = Registry.LocalMachine.OpenSubKey(@"Software\Microsoft\.NETFramework\policy");
-                if (key != null)
-                {
-                    foreach (string name in key.GetSubKeyNames())
-                    {
-                        if (name.StartsWith("v"))
-                        {
-                            RegistryKey key2 = key.OpenSubKey(name);
-                            foreach (string build in key2.GetValueNames())
-                                frameworks.Add(new RuntimeFramework(RuntimeType.Net, new Version(name.Substring(1) + "." + build)));
-                        }
-                    }
-                }
-            }
+            // EMPTY
         }
 
 #if true

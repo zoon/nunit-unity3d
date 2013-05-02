@@ -154,9 +154,6 @@ namespace NUnit.Framework.Constraints
             if (x is Stream && y is Stream)
                 return StreamsEqual((Stream)x, (Stream)y);
 
-            if (x is DirectoryInfo && y is DirectoryInfo)
-                return DirectoriesEqual((DirectoryInfo)x, (DirectoryInfo)y);
-
             if (Numerics.IsNumericType(x) && Numerics.IsNumericType(y))
                 return Numerics.AreEqual(x, y, ref tolerance);
 
@@ -331,25 +328,6 @@ namespace NUnit.Framework.Constraints
             }
         }
 
-        /// <summary>
-        /// Method to compare two DirectoryInfo objects
-        /// </summary>
-        /// <param name="x">first directory to compare</param>
-        /// <param name="y">second directory to compare</param>
-        /// <returns>true if equivalent, false if not</returns>
-        private static bool DirectoriesEqual(DirectoryInfo x, DirectoryInfo y)
-        {
-            // Do quick compares first
-            if (x.Attributes != y.Attributes ||
-                x.CreationTime != y.CreationTime ||
-                x.LastAccessTime != y.LastAccessTime)
-            {
-                return false;
-            }
-
-            // TODO: Find a cleaner way to do this
-            return new SamePathConstraint(x.FullName).Matches(y.FullName);
-        }
 
         private bool StreamsEqual(Stream x, Stream y)
         {
