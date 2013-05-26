@@ -1,4 +1,4 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Copyright (c) 2010 Charlie Poole
 //
 // Permission is hereby granted, free of charge, to any person obtaining
@@ -26,7 +26,7 @@ namespace NUnit.Framework.Api
     /// <summary>
     /// The ITestResult interface represents the result of a test.
     /// </summary>
-    public interface ITestResult : IXmlNodeBuilder
+    public interface ITestResult
     {
         /// <summary>
         /// Gets the ResultState of the test result, which 

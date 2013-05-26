@@ -23,7 +23,6 @@
 
 using System.Collections.Generic;
 using System.Reflection;
-using System.Xml;
 using NUnit.Framework.Api;
 using NUnit.Framework.Internal.Commands;
 #if true
@@ -174,22 +173,6 @@ namespace NUnit.Framework.Internal
             }
         }
 #endif
-
-        /// <summary>
-        /// Returns an XmlNode representing the current result after
-        /// adding it as a child of the supplied parent node.
-        /// </summary>
-        /// <param name="parentNode">The parent node.</param>
-        /// <param name="recursive">If true, descendant results are included</param>
-        /// <returns></returns>
-        public override XmlNode AddToXml(XmlNode parentNode, bool recursive)
-        {
-            XmlNode thisNode = XmlHelper.AddElement(parentNode, XmlElementName);
-
-            PopulateTestNode(thisNode, recursive);
-
-            return thisNode;
-        }
 
         /// <summary>
         /// Gets this test's child tests

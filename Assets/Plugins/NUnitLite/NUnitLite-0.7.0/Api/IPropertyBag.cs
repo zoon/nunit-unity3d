@@ -1,4 +1,4 @@
-﻿namespace NUnit.Framework.Api
+namespace NUnit.Framework.Api
 {
     /// <summary>
     /// A PropertyBag represents a collection of name/value pairs
@@ -37,7 +37,7 @@
     ///     Assert.That(bag.GetSetting("Priority", "low"),
     ///       Is.EqualTo("high"));
     /// </summary>
-    public interface IPropertyBag : IXmlNodeBuilder, System.Collections.IEnumerable
+    public interface IPropertyBag : System.Collections.IEnumerable
     {
         /// <summary>
         /// Get the number of key/value pairs in the property bag

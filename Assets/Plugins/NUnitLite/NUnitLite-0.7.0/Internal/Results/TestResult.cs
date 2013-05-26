@@ -22,7 +22,6 @@
 // ***********************************************************************
 
 using System;
-using System.Xml;
 using NUnit.Framework.Api;
 
 namespace NUnit.Framework.Internal
@@ -230,74 +229,6 @@ namespace NUnit.Framework.Internal
 
         #endregion
 
-        #region IXmlNodeBuilder Members
-
-        /// <summary>
-        /// Returns the Xml representation of the result.
-        /// </summary>
-        /// <param name="recursive">If true, descendant results are included</param>
-        /// <returns>An XmlNode representing the result</returns>
-        public XmlNode ToXml(bool recursive)
-        {
-            XmlNode topNode = XmlHelper.CreateTopLevelElement("dummy");
-
-            AddToXml(topNode, recursive);
-
-            return topNode.FirstChild;
-        }
-
-        /// <summary>
-        /// Adds the XML representation of the result as a child of the
-        /// supplied parent node..
-        /// </summary>
-        /// <param name="parentNode">The parent node.</param>
-        /// <param name="recursive">If true, descendant results are included</param>
-        /// <returns></returns>
-        public virtual XmlNode AddToXml(XmlNode parentNode, bool recursive)
-        {
-            // A result node looks like a test node with extra info added
-            XmlNode thisNode = this.test.AddToXml(parentNode, false);
-
-            XmlHelper.AddAttribute(thisNode, "result", ResultState.Status.ToString());
-            if (ResultState.Label != string.Empty) // && ResultState.Label != ResultState.Status.ToString())
-                XmlHelper.AddAttribute(thisNode, "label", ResultState.Label);
-
-            XmlHelper.AddAttribute(thisNode, "time", this.Time.ToString("0.000", System.Globalization.CultureInfo.InvariantCulture));
-
-            if (this.test is TestSuite)
-            {
-                XmlHelper.AddAttribute(thisNode, "total", (PassCount + FailCount + SkipCount + InconclusiveCount).ToString());
-                XmlHelper.AddAttribute(thisNode, "passed", PassCount.ToString());
-                XmlHelper.AddAttribute(thisNode, "failed", FailCount.ToString());
-                XmlHelper.AddAttribute(thisNode, "inconclusive", InconclusiveCount.ToString());
-                XmlHelper.AddAttribute(thisNode, "skipped", SkipCount.ToString());
-            }
-
-            XmlHelper.AddAttribute(thisNode, "asserts", this.AssertCount.ToString());
-
-            switch (ResultState.Status)
-            {
-                case TestStatus.Failed:
-                    AddFailureElement(thisNode);
-                    break;
-                case TestStatus.Skipped:
-                    AddReasonElement(thisNode);
-                    break;
-                case TestStatus.Passed:
-                    break;
-                case TestStatus.Inconclusive:
-                    break;
-            }
-
-            if (recursive && HasChildren)
-                foreach (TestResult child in Children)
-                    child.AddToXml(thisNode, recursive);
-
-            return thisNode;
-        }
-
-        #endregion
-
         public void AddResult(ITestResult result)
         {
             if (children == null)
@@ -393,49 +324,5 @@ namespace NUnit.Framework.Internal
 
         #endregion
 
-        #region Helper Methods
-
-        /// <summary>
-        /// Adds a reason element to a node and returns it.
-        /// </summary>
-        /// <param name="targetNode">The target node.</param>
-        /// <returns>The new reason element.</returns>
-        private XmlNode AddReasonElement(XmlNode targetNode)
-        {
-            XmlNode reasonNode = XmlHelper.AddElement(targetNode, "reason");
-            XmlHelper.AddElementWithCDataSection(reasonNode, "message", this.Message);
-            return reasonNode;
-        }
-
-        /// <summary>
-        /// Adds a failure element to a node and returns it.
-        /// </summary>
-        /// <param name="targetNode">The target node.</param>
-        /// <returns>The new failure element.</returns>
-        private XmlNode AddFailureElement(XmlNode targetNode)
-        {
-            XmlNode failureNode = XmlHelper.AddElement(targetNode, "failure");
-
-            if (this.Message != null)
-            {
-                XmlHelper.AddElementWithCDataSection(failureNode, "message", this.Message);
-            }
-
-#if !NETCF_1_0
-            if (this.StackTrace != null)
-            {
-                XmlHelper.AddElementWithCDataSection(failureNode, "stack-trace", this.StackTrace);
-            }
-#endif
-
-            return failureNode;
-        }
-
-        //private static bool IsTestCase(ITest test)
-        //{
-        //    return !(test is TestSuite);
-        //}
-
-        #endregion
     }
 }

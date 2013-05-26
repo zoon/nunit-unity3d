@@ -31,7 +31,7 @@ namespace NUnit.Framework.Api
 	/// The Run method is specifically excluded to allow
 	/// for data-only representations of a test.
 	/// </summary>
-	public interface ITest : IXmlNodeBuilder
+	public interface ITest
     {
         /// <summary>
         /// Gets or sets the id of the test

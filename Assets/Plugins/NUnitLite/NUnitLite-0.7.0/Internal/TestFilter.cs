@@ -22,7 +22,6 @@
 // ***********************************************************************
 
 using System;
-using System.Xml;
 using NUnit.Framework.Api;
 using NUnit.Framework.Internal.Filters;
 
@@ -92,67 +91,6 @@ namespace NUnit.Framework.Internal
 
             return false;
 		}
-
-        public static TestFilter FromXml(string xmlText)
-        {
-            XmlDocument doc = new XmlDocument();
-            doc.LoadXml(xmlText);
-            XmlNode topNode = doc.FirstChild;
-
-            if (topNode.Name != "filter")
-                throw new Exception("Expected filter element at top level");
-
-            // Initially, an empty filter
-            TestFilter result = TestFilter.Empty;
-            bool isEmptyResult = true;
-
-            XmlNodeList testNodes = topNode.SelectNodes("tests/test");
-            XmlNodeList includeNodes = topNode.SelectNodes("include/category");
-            XmlNodeList excludeNodes = topNode.SelectNodes("exclude/category");
-
-            if (testNodes.Count > 0)
-            {
-                SimpleNameFilter nameFilter = new SimpleNameFilter();
-                foreach (XmlNode testNode in topNode.SelectNodes("tests/test"))
-                    nameFilter.Add(testNode.InnerText);
-
-                result = nameFilter;
-                isEmptyResult = false;
-            }
-
-            if (includeNodes.Count > 0)
-            {
-                //CategoryFilter includeFilter = new CategoryFilter();
-                //foreach (XmlNode includeNode in includeNodes)
-                //    includeFilter.AddCategory(includeNode.InnerText);
-
-                // Temporarily just look at the first element
-                XmlNode includeNode = includeNodes[0];
-                TestFilter includeFilter = new CategoryExpression(includeNode.InnerText).Filter;
-
-                if (isEmptyResult)
-                    result = includeFilter;
-                else
-                    result = new AndFilter(result, includeFilter);
-                isEmptyResult = false;
-            }
-
-            if (excludeNodes.Count > 0)
-            {
-                CategoryFilter categoryFilter = new CategoryFilter();
-                foreach (XmlNode excludeNode in excludeNodes)
-                    categoryFilter.AddCategory(excludeNode.InnerText);
-                TestFilter excludeFilter = new NotFilter(categoryFilter);
-
-                if (isEmptyResult)
-                    result = excludeFilter;
-                else
-                    result = new AndFilter(result, excludeFilter);
-                isEmptyResult = false;
-            }
-
-            return result;
-        }
 
 		/// <summary>
 		/// Nested class provides an empty filter - one that always
