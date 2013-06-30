@@ -69,5 +69,8 @@ obj/*
 */bin/*
 */obj/*
 
+# dll project
+!nunit-dll-project/nunit-dll-project.csproj
+!nunit-dll-project/nunit-dll-project.sln
 
 
