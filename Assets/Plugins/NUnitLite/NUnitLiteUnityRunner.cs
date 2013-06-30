@@ -74,7 +74,7 @@ public static class NUnitLiteUnityRunner
 
     private static void UnityConsolePresenter(string longResult, ResultSummary result)
     {
-        if (result.ErrorCount > 0 || result.FailureCount > 0)
+        if (result != null && (result.ErrorCount > 0 || result.FailureCount > 0))
             Debug.LogWarning(longResult);
         else
             Debug.Log(longResult);
